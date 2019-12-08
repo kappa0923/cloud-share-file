@@ -1,0 +1,22 @@
+:root {
+    --primary: #FF9800;
+    --secondary: #66bb6a;
+}
+
+body {
+    padding-top: 5rem;
+}
+
+.main-contents {
+    padding: 8rem 1.5rem;
+    text-align: center;
+    border-style: dotted;
+}
+
+.main-contents.onenter {
+    background-color: #DDD;
+}
+
+.upload-button {
+    padding: 3rem 1.5rem;
+}
