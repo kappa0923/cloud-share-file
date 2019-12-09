@@ -103,7 +103,7 @@ class CloudShare {
     uploadTask.on('state_changed', (snapshot) => {
       let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       console.log('Upload is ' + progress + '% done');
-      this.fileLink.innerHTML = `<div class="progress"></div>`;
+      this.fileLink.innerHTML = `<div class="justify-content-center">${progress}% done</div>`;
       switch (snapshot.state) {
         case firebase.storage.TaskState.PAUSED:
           console.log('Upload is paused');
