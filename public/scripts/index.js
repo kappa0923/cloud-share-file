@@ -97,28 +97,7 @@ class CloudShare {
       return;
     }
 
-    const imageRef = this.storageRef.child(`files/${this.fileName}`);
-    const uploadTask = imageRef.put(this.file);
-
-    uploadTask.on('state_changed', (snapshot) => {
-      let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('Upload is ' + progress + '% done');
-      this.fileLink.innerHTML = `<div class="justify-content-center">${progress}% done</div>`;
-      switch (snapshot.state) {
-        case firebase.storage.TaskState.PAUSED:
-          console.log('Upload is paused');
-          break;
-        case firebase.storage.TaskState.RUNNING:
-          console.log('Upload is running');
-          break;
-      }
-    }, (error) => {
-    }, () => {
-      uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-        console.log('File available at', downloadURL);
-        this.fileLink.innerHTML = `<a target="_blank" href="${downloadURL}">${downloadURL}</a>`;
-      });
-    });
+    // TODO: アップロード処理を実装
   }
 
   /**
