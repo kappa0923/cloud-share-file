@@ -6,7 +6,7 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 const firestore = admin.firestore();
 
-exports.trackingUploadLog = functions.region('asia-northeast1').storage.object().onFinalize((object) => {
+exports.trackingUploadLog = functions.storage.object().onFinalize((object) => {
   const resourceState = object.resourceState;
 
   // 削除済みの場合は処理せず終了
